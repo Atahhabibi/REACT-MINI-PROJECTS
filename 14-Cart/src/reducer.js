@@ -1,4 +1,5 @@
 
+
 const reducer=(state,action)=>{
 
     if(action.type==='CLEAR_CART'){
@@ -10,7 +11,7 @@ const reducer=(state,action)=>{
         return {...state,cart:newCart};   
     }
 
-    if(action.type==='INCREASE'){
+   /*  if(action.type==='INCREASE'){
 
         let tempCart=state.cart.map((cartItem)=>{
             if(cartItem.id===action.payload){
@@ -38,7 +39,7 @@ const reducer=(state,action)=>{
     
         return {...state,cart:tempCart}
 
-    }
+    } */
 
     if(action.type==='GET_TOTALS'){
 
@@ -59,6 +60,40 @@ const reducer=(state,action)=>{
         total=parseFloat(total.toFixed(2))
         return {...state,total,amount}
     }
+
+
+    if(action.type==='LOADING'){
+        return {...state,loading:true}
+    }
+
+    if(action.type==='DISPLAY_ITEMS'){
+        return {...state,cart:action.payload,loading:false}
+    }
+
+    if(action.type==="TOGGLE_AMOUNT"){
+        let tempCart=state.cart.map((cartItem)=>{
+            if(cartItem.id===action.payload.id){
+
+                if(action.payload.type==="inc"){
+                    return {...cartItem,amount:cartItem.amount+1}
+                }
+                
+                if(action.payload.type==="dec"){
+                    
+                    return {...cartItem,amount:cartItem.amount-1}
+                }
+
+            }
+
+            return cartItem;
+        }).filter((cartItem)=>cartItem.amount!==0)
+
+       
+
+        return {...state,cart:tempCart}
+    }
+
+
 
 
 
