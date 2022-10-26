@@ -1,8 +1,5 @@
 
-
 #### All Projects
-
-[Projects Site](https://react-projects.netlify.app/)
 
 ## Corresponding Tutorial Topics
 
@@ -43,8 +40,6 @@
 15. Cocktails
 
 ## Advanced Projects (Course Exclusive)
-
-[My React Course](https://www.udemy.com/course/react-tutorial-and-projects-course/?referralCode=FEE6A921AF07E2563CEF)
 
 16. Markdown Preview
 17. Random Person
