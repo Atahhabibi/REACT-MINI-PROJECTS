@@ -31,7 +31,7 @@ const AppProvider = ({ children }) => {
 
 
 
-      }else{
+      }else {
         setcockTails([]);
       }
 
