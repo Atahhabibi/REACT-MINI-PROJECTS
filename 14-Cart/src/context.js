@@ -79,8 +79,6 @@ const AppProvider = ({ children }) => {
 
 
 
-
-
  useEffect(()=>{
   fetchData(url);
  },[])

@@ -99,7 +99,7 @@ const reducer=(state,action)=>{
 
 
 
-    return state;
+    throw new Error('NO matching action type')
 }
 
 export default reducer;
