@@ -4,22 +4,22 @@ import { useGlobalContext } from './context'
 
 const Buttons = () => {
   
-  const {handlePage,nbPages,page}=useGlobalContext();
+  const {Loading,handlePage,nbPages,page}=useGlobalContext();
 
  
   return <div className="btn-container">
 
-    <button  onClick={()=>{
+    <button disabled={Loading} onClick={()=>{
 
       handlePage('dec')
 
     }}>prev</button>
 
-    <p>{page} of {nbPages}</p>
+    <p>{page+1} of {nbPages}</p>
 
-     <button  onClick={()=>{
+     <button disabled={Loading} onClick={()=>{
 
-      handlePage('inc')
+      handlePage('inc');
 
     }}>next</button>
 
